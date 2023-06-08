@@ -1,0 +1,14 @@
+ # Project Path_finder_Point
+
+# This program uses pygame which is free and open-source cross-platform library 
+# for the development of multimedia applications like video games using Python. 
+# I also implemented the queue module implements multi-producer, multi-consumer queues. 
+# It is especially useful in threaded programming when information must be exchanged safely between multiple threads.
+
+# Path finding visualizer tool is for to visualize the a star pathfinding algorithm as it runs.
+
+## Control commands: mouse command [0] left - btn, first click for draw first spot (start cube) 
+# and second click for draw the second spot (end cube)
+#                                  [2] right - btn, for delete the spot
+#                    spacebar for start the path-finder
+#                    C btn for clear the grid
