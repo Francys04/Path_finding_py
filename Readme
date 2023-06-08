@@ -7,6 +7,7 @@
 
 # Path finding visualizer tool is for to visualize the a star pathfinding algorithm as it runs.
 
+# Run the program
 ## Control commands: mouse command [0] left - btn, first click for draw first spot (start cube) 
 # and second click for draw the second spot (end cube)
 #                                  [2] right - btn, for delete the spot
