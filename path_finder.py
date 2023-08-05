@@ -1,6 +1,5 @@
 import pygame
 import math
-from pygame import *
 # Python queue is a linear abstract data structure that follows the first in-first out (FIFO) approach
 from queue import PriorityQueue
 # activate the pygame library
@@ -12,9 +11,7 @@ WIDTH = 800
 WIN = pygame.display.set_mode((WIDTH, WIDTH))
 pygame.display.set_caption("path_finding")
 
-
-
-# const
+"""Craete constants for design"""
 RED = (255, 0, 0)
 GREEN = (0, 255, 0)
 BLUE = (0, 255, 0)
@@ -43,7 +40,7 @@ class Spot:
 		self.neighbors = []
 		self.width = width
 		self.total_rows = total_rows
-
+	"""define color for each command"""
 	def get_pos(self):
 		return self.row, self.col
 
@@ -85,7 +82,7 @@ class Spot:
 
 	def draw(self, win):
 		pygame.draw.rect(win, self.color, (self.x, self.y, self.width, self.width))
-# daca vom avea o bariera inchisa
+# if will be close obstacle
 #  if not a barrier can add that to the neighbors list
 	def update_neighbors(self, grid):
 		self.neighbors = []
@@ -101,27 +98,28 @@ class Spot:
 		if self.col > 0 and not grid[self.row][self.col - 1].is_barrier(): # LEFT
 			self.neighbors.append(grid[self.row][self.col - 1])
     
-    # magic method that is used to define or implement the functionality of the less than operator “<” , it returns a boolean value according to the condition i.e. 
+    # magic method that is used to define or implement the functionality of the less than operator “<” , 
+    # it returns a boolean value according to the condition i.e. 
     # it returns true if a<b where a and b are the objects of the class.
 	def __lt__(self, other):
 		return False
 
-# define point 1 and 2
-# calculate the distanse (do not calculate the diagonal dista) L or taxi cab distance
+"""Define point 1 and 2
+#Calculate the distanse (do not calculate the diagonal dista) L or taxi cab distance"""
 def h(p1, p2):
 	x1, y1 = p1
 	x2, y2 = p2
 	return abs(x1 - x2) + abs(y1 - y2)
 
-# path algo for construct the path
+"""Path algo for construct the path"""
 def reconstruct_path(came_from, current, draw):
 	while current in came_from:
 		current = came_from[current]
 		current.make_path()
 		draw()
 
-# define start and end node (g and f score)
-# if you have some value in queue open_set_hash = {start}
+"""Define start and end node (g and f score)
+If you have some value in queue open_set_hash = {start}"""
 def algorithm(draw, grid, start, end):
 	count = 0
 	open_set = PriorityQueue()
@@ -198,7 +196,7 @@ def draw(win, grid, rows, width):
 	draw_grid(win, rows, width)
 	pygame.display.update()
 
-# mouse position, what cube you click
+"""Mouse position, what cube you click"""
 def get_clicked_pos(pos, rows, width):
 	gap = width // rows
 	y, x = pos
@@ -208,7 +206,7 @@ def get_clicked_pos(pos, rows, width):
 
 	return row, col
 
-# checks, colision checks
+"""Checks, colision checks"""
 def main(win, width):
 	ROWS = 50
 	grid = make_grid(ROWS, width)
@@ -272,6 +270,6 @@ def main(win, width):
 					grid = make_grid(ROWS, width)
 
     
-	pygame.quit()
+	pygame.quit() # End of program, to clean up any resources and ensure a proper shutdown of the Pygame system.
 
-main(WIN, WIDTH)
+main(WIN, WIDTH) # Run a game loop

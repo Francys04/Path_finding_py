@@ -1,15 +1,18 @@
- # Project Path_finder_Point
+## Project Path_finder_Point
+### Install packages
+- `pip install pygame`
+- Pygame -> Pygame is a popular Python library used for creating 2D video games and multimedia applications. It provides functionalities for handling graphics, sound, input devices, and other game-related tasks, making it a great choice for hobbyists, beginners, and small game development projects.
 
-# This program uses pygame which is free and open-source cross-platform library 
-# for the development of multimedia applications like video games using Python. 
-# I also implemented the queue module implements multi-producer, multi-consumer queues. 
-# It is especially useful in threaded programming when information must be exchanged safely between multiple threads.
+- This program uses pygame which is free and open-source cross-platform library 
+for the development of multimedia applications like video games using Python. 
+- I also implemented the queue module implements multi-producer, multi-consumer queues. 
+- It is especially useful in threaded programming when information must be exchanged safely between multiple threads.
 
-# Path finding visualizer tool is for to visualize the a star pathfinding algorithm as it runs.
+- Path finding visualizer tool is for to visualize the a star pathfinding algorithm as it runs.
 
-# Run the program
-## Control commands: mouse command [0] left - btn, first click for draw first spot (start cube) 
-# and second click for draw the second spot (end cube)
-#                                  [2] right - btn, for delete the spot
-#                    spacebar for start the path-finder
-#                    C btn for clear the grid
+### Run the program
+- Control commands: mouse command [0] left - btn, first click for draw first spot (start cube) 
+and second click for draw the second spot (end cube)
+                                  [2] right - btn, for delete the spot
+                    spacebar for start the path-finder
+                    C btn for clear the grid
